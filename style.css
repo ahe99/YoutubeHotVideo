@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+body {
+  background-color: antiquewhite;
+  font-family: "cwTeXYen", sans-serif;
+}
+.loading {
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: darkgray;
+  opacity: 0.7;
+  position: fixed;
+  visibility: visible;
+  z-index: 5;
+}
+.menu {
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: fixed;
+  opacity: 0.7;
+  z-index: 6;
+}
+.YThot {
+  margin-top: 10vmin;
+}
+.row {
+  padding: 3px;
+  margin-bottom: 7px;
+  border: 1px brown solid;
+  border-left: 5px black solid;
+  background-color: ghostwhite;
+}
+.about {
+  height: 180px;
+  overflow: hidden;
+}
+.title {
+  width: 100%;
+  margin-top: 5px;
+  overflow: hidden;
+}
+.img-wrap {
+  height: 180px;
+}
+.img-wrap:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.5s;
+}
+.duration {
+  right: 0;
+  bottom: 0;
+  padding: 3px;
+  background-color: antiquewhite;
+  position: absolute;
+}
+h1 {
+  font-size: 6vmin;
+}
+h3 {
+  border-bottom: 1px darkgray solid;
+  font-size: 4vmin;
+  white-space: nowrap;
+}
+h3:hover {
+  color: darkseagreen;
+  transition: 0.5s;
+}
+.order {
+  font-size: 1vmin;
+}
+p {
+  font-size: 3vmin;
+  color: crimson;
+}
