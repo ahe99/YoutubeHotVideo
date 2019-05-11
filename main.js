@@ -1,3 +1,6 @@
+document.getElementById("header").style.marginLeft =
+  document.getElementById("menu").offsetWidth + "px";
+
 let loading = function() {
   document.getElementById("loading").style.visibility = "visible";
 };

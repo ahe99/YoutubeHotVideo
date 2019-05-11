@@ -14,21 +14,7 @@
     <title>Youtube發燒影片</title>
   </head>
   <body>
-    <div id="menu" class="menu btn-group" role="group">
-      <button class="btn btn-primary">Youtube發燒</button>
-      <button class="btn btn-secondary" onclick="getYT(0)">Recently</button>
-      <button class="btn btn-secondary" onclick="getYT(1)">Film & Animation</button>
-      <button class="btn btn-secondary" onclick="getYT(10)">Music</button>
-      <button class="btn btn-secondary" onclick="getYT(20)">Gaming</button>
-      <div class="btn-group">
-        <button id="ytothers" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >others</button>
-        <div class="dropdown-menu" aria-labelledby="ytothers">
-          <a href="#" class="dropdown-item" onclick="getYT(24)">Entertainment</a>
-          <a href="#" class="dropdown-item" onclick="getYT(15)">Pets & Animals</a>
-          <a href="#" class="dropdown-item" onclick="getYT(28)">Science & Technology</a>
-        </div>
-      </div>      
-    </div>
+      
     
     <div id="loading" class="loading d-flex justify-content-center align-items-center">
         <h2>Loading...<h2>
@@ -36,7 +22,21 @@
         <span class="sr-only">Loading...</span>
       </div>
     </div>
+
     <div id="YThot" class="YThot container">
+      <div id="menu" class="menu" class="btn-group">
+        <button id="category" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">影片分類</button>
+        <div class="dropdown-menu" aria-labelledby="ytothers">
+          <a href="#" class="dropdown-item" onclick="getYT(0)">Recently</a>
+          <a href="#" class="dropdown-item" onclick="getYT(1)">Film & Animation</a>
+          <a href="#" class="dropdown-item" onclick="getYT(10)">Music</a>
+          <a href="#" class="dropdown-item" onclick="getYT(20)">Gaming</a>
+          <a href="#" class="dropdown-item" onclick="getYT(24)">Entertainment</a>
+          <a href="#" class="dropdown-item" onclick="getYT(15)">Pets & Animals</a>
+          <a href="#" class="dropdown-item" onclick="getYT(28)">Science & Technology</a>
+        </div>
+      </div>
       <h1 id="header">Youtube發燒 - Recently</h1>
       <div class="row " v-for="(item, index) in infor" :key="index">
         <div class="img-wrap col-12 col-xs-12 col-sm-12 col-md-12 col-lg-4 ">
@@ -62,6 +62,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 
+    
     <script src="main.js"></script>
   </body>
 </html>

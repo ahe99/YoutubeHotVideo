@@ -6,8 +6,6 @@
 
 [---> LINK <---](https://ahe99.github.io/YoutubeHotVideos)
 
----
-
 Vue 語法生成初始化頁面
 
 Bootstrap4 做 RWD 排版
