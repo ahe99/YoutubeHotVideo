@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 body {
-  min-height: 200vh; /*for canvas-nest.js*/
   background-color: antiquewhite;
   font-family: "cwTeXYen", sans-serif;
 }
@@ -13,11 +12,6 @@ body {
   position: fixed;
   visibility: visible;
   z-index: 5;
-}
-.menu {
-  position: fixed;
-  opacity: 0.9;
-  z-index: 6;
 }
 .YThot {
   margin-top: 9vmin;
@@ -33,7 +27,7 @@ body {
   height: 180px;
   overflow: hidden;
 }
-.title {
+.videoTitle {
   width: 100%;
   margin-top: 5px;
   overflow: hidden;
@@ -52,8 +46,12 @@ body {
   background-color: antiquewhite;
   position: absolute;
 }
+#menu {
+  display: inline-block;
+}
 h1 {
   font-size: 8vmin;
+  display: inline-block;
 }
 h3 {
   border-bottom: 1px darkgray solid;

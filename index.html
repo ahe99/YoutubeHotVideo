@@ -24,33 +24,36 @@
     </div>
 
     <div id="YThot" class="YThot container">
-      <div id="menu" class="menu" class="btn-group">
+      <div class="header">
+        <h1 id="header">{{ header }}</h1>
+        <div id="menu" class="menu" class="btn-group">
         <button id="category" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">影片分類</button>
         <div class="dropdown-menu" aria-labelledby="ytothers">
-          <a href="#" class="dropdown-item" onclick="getYT(0)">Recently</a>
-          <a href="#" class="dropdown-item" onclick="getYT(1)">Film & Animation</a>
-          <a href="#" class="dropdown-item" onclick="getYT(10)">Music</a>
-          <a href="#" class="dropdown-item" onclick="getYT(20)">Gaming</a>
-          <a href="#" class="dropdown-item" onclick="getYT(24)">Entertainment</a>
-          <a href="#" class="dropdown-item" onclick="getYT(15)">Pets & Animals</a>
-          <a href="#" class="dropdown-item" onclick="getYT(28)">Science & Technology</a>
+          <a href="#" class="dropdown-item" @click="getYT(0)">Recently</a>
+          <a href="#" class="dropdown-item" @click="getYT(1)">Film & Animation</a>
+          <a href="#" class="dropdown-item" @click="getYT(10)">Music</a>
+          <a href="#" class="dropdown-item" @click="getYT(20)">Gaming</a>
+          <a href="#" class="dropdown-item" @click="getYT(24)">Entertainment</a>
+          <a href="#" class="dropdown-item" @click="getYT(15)">Pets & Animals</a>
+          <a href="#" class="dropdown-item" @click="getYT(28)">Science & Technology</a>
         </div>
       </div>
-      <h1 id="header">Youtube發燒 - Recently</h1>
-      <div class="row " v-for="(item, index) in infor" :key="index">
+      </div>
+      
+      <div class="row " v-for="(video, index) in videos" :key="index">
         <div class="img-wrap col-12 col-xs-12 col-sm-12 col-md-12 col-lg-4 ">
-          <a class="link" :title="item.title" :href="item.url" target="_blank">
-            <img class="img" :src="item.imgUrl" alt="" />
-            <span class="duration">{{ item.duration }}</span>
+          <a class="link" :title="video.title" :href="video.url" target="_blank">
+            <img class="img" :src="video.imgUrl" alt="" />
+            <span class="duration">{{ video.duration }}</span>
           </a>
         </div>
         <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-8 about">
           <span class="order">#{{ index+1 }}</span>
-          <a class="link" :title="item.title" :href="item.url" target="_blank"
-            ><h3 class="title">{{ item.title }}</h3>
+          <a class="link" :title="video.title" :href="video.url" target="_blank"
+            ><h3 class="videoTitle">{{ video.title }}</h3>
             </a>
-          <p class="description">{{ item.description }}</p>
+          <p class="description">{{ video.description }}</p>
         </div>
       </div>
     </div>
