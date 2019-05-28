@@ -1,15 +1,22 @@
-let loading = function() {
-  document.getElementById("loading").style.visibility = "visible";
-};
-let ready = function() {
-  document.getElementById("loading").style.visibility = "hidden";
-};
+Vue.component("loading", {
+  props: ["loading"],
+  template: `
+    <div id="loading" class="loading d-flex justify-content-center align-items-center" 
+    :loading="loading" v-if="loading">
+      <h2>Loading...</h2>
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>`
+});
 
 const YThot = new Vue({
   el: "#YThot",
   data: {
     header: "Youtube發燒影片 - Recently",
     url: "",
+    loading: true,
+    indexToCategory: [0, 1, 10, 15, 20, 24, 28],
     category: {
       0: "Recently",
       1: "Film & Animation",
@@ -38,8 +45,14 @@ const YThot = new Vue({
           "key=AIzaSyDPePVxacztVwUSRbR9eqqdPtkAbI8GQB8";
       }
     },
+    isLoading() {
+      this.loading = true;
+    },
+    isReady() {
+      this.loading = false;
+    },
     getYT(videoCategoryId) {
-      loading();
+      this.isLoading();
       this.changeHeader(videoCategoryId);
       this.changeUrl(videoCategoryId);
       axios
@@ -60,13 +73,12 @@ const YThot = new Vue({
                   dislikeCount: response.data.items[i].statistics.dislikeCount,*/
             });
           }
-          ready();
-          console.log(this.videos);
+          this.isReady();
         })
         .catch(err => {
           console.log(err);
           alert("oops!Something went wrong!");
-          ready();
+          this.isReady();
         });
     }
   },
